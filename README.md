@@ -1,7 +1,7 @@
 # A Cloud Native Oauth2 Authentication and Authorisation Infrastructure 
 
 
-EPIC and Benefit hypothesis
+## EPIC and Benefit hypothesis
 
 As an organisation I distribute my ressource and API to my partner so that only them can access to the ressource I am distributing
 
