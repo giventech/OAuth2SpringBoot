@@ -35,6 +35,11 @@ Feature3 : Ressource server
 - http://localhost:8080/oauth/authorize?client_id=clientapp&response_type=code&scope=read_profile_info	
 You will be presented with the screen below 
 
+![image](https://user-images.githubusercontent.com/17228294/92304085-43e30e80-efbe-11ea-8eb4-bd4d467aaca2.png)
+
+
+![image](https://user-images.githubusercontent.com/17228294/92304193-1185e100-efbf-11ea-845d-56e5ad38263b.png)
+
 
 
 
