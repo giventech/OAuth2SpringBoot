@@ -7,11 +7,10 @@ As an organisation or individual  I want to delegate access to my own resssource
 
 Acceptance criteria:
 
-I direct my partners to an authorization giving a temporary grant to my customers own data that are managed on my server (e.g. REST API, or Micro-services)
-
-Given a trusted partner (has a registered  client_id and client secret) regisered for the ressource before the  authorisation server, the trusted partner can be provided an authorisation code
-A fine grained scope ressource server  data, type and data categories can be attached to 
-given I an authorisation grant or code, I can provide 
+- I direct my partners to an authorization giving a temporary grant to my customers own data that are managed on my server (e.g. REST API, or Micro-services)
+- Given a trusted partner (has a registered  client_id and client secret) regisered for the ressource before the  authorisation server, the trusted partner can be provided an authorisation code
+- A fine grained scope ressource server  data, type and data categories can be attached to 
+- given I an authorisation grant or code, I can provide 
 
 
 
