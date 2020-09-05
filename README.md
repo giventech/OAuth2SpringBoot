@@ -39,22 +39,31 @@ Todo
 1) Get the authorization code provididing the parameter below
 
 - http://localhost:8080/oauth/authorize?client_id=clientapp&response_type=code&scope=read_profile_info	
-You will be presented with the screen below 
 
+- You will be presented with the screen below 
+
+![image](https://user-images.githubusercontent.com/17228294/92304384-d84e7080-efc0-11ea-950d-27856ca8b54b.png)
+
+
+2) Click "Authorize" and then you  will be redirected to the login page with an authorization code
 
 ![image](https://user-images.githubusercontent.com/17228294/92304193-1185e100-efbf-11ea-845d-56e5ad38263b.png)
 
+
+## That's it that what the Authorization server is meant to do
+
+
+# Obtain a access token from a ressource server
 
 curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "content-type: application/x-www-form-urlencoded" -d "code=A6A8Tz&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&scope=read_profile_info"
 
 ![image](https://user-images.githubusercontent.com/17228294/92304085-43e30e80-efbe-11ea-8eb4-bd4d467aaca2.png)
 
 
-
-
 # TODO 
 1) Proof read
 2) Spell Check
+3) Find ways to test Authorization server in a more simple manner
 
 
 
