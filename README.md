@@ -18,14 +18,20 @@ Acceptance criteria
 - I can attach a scope listing  ressource data, type and data categories owners/customer agreed (explicity or implicitly to share)
 
 
-
-
-### Feature1 : Authorization server
-Key principle: and client application (e.g. Micro-service instead of sending their client client_id and client_secret the resource it wants to access, request it through 
+### Feature 1 : Authorization server
+- Key principle:
+A client application (e.g. Micro-service)  instead of sending their client client_id and client_secret the resource it wants to access, request it through 
 a third-party server.
 
-Feature2 : Authentication server
-Feature3 : Ressource server
+-> The screen shot below show how the server installed the Authorositation server by mapping the key OAuth2 URLs
+* /oauth/authorization
+* /auth/token
+* /oauth/refresh_token
+
+![image](https://user-images.githubusercontent.com/17228294/92223475-d9f63680-eee3-11ea-84b0-2f8085208e8e.png)
+
+### Feature 2:  Ressource server
+Todo
 
 
 ## Testing 
@@ -43,19 +49,21 @@ You will be presented with the screen below
 
 
 
-
-
-
-
-
-
 curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "content-type: application/x-www-form-urlencoded" -d "code=A6A8Tz&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&scope=read_profile_info"
 
 
-![image](https://user-images.githubusercontent.com/17228294/92223475-d9f63680-eee3-11ea-84b0-2f8085208e8e.png)
+
+
+# TODO 
+1) Proof read
+2) Spell Check
+
 
 
 # REFERENCES
 
 * https://howtodoinjava.com/spring-boot2/oauth2-auth-server/
 * https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
+* https://pattern-match.com/blog/springboot2-with-oauth2-integration/
+* https://www.youtube.com/watch?v=996OiexHze0
+
