@@ -7,10 +7,16 @@ As an organisation or individual  I want to delegate access to my own resssource
 
 Acceptance criteria:
 
-- I direct my partners to an authorization giving a temporary grant to my customers own data that are managed on my server (e.g. REST API, or Micro-services)
-- Given a trusted partner (has a registered  client_id and client secret) regisered for the ressource before the  authorisation server, the trusted partner can be provided an authorisation code
-- A fine grained scope ressource server  data, type and data categories can be attached to 
-- given I an authorisation grant or code, I can provide 
+- I can direct my partners to centralised authorisation service capable of granting access to ressource server (REST-API) managing access to specific owners data ressources
+
+
+As an athorisation system, I want to provide autorisation code to identified partner (Identity is not part of OAUTH2 But Open Id connect extention)
+
+Acceptance criteria
+
+- Given a trusted partner provide a client_id and client secret matching the authorisation system databased I can provide authorisation code etc...
+- I can attach a scope listing  ressource data, type and data categories owners/customer agreed (explicity or implicitly to share)
+
 
 
 
