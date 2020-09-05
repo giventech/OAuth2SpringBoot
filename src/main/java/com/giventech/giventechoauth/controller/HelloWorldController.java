@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloWorldController {
 
-    @GetMapping("hello")
+    @GetMapping("/api/hello")
     @ResponseBody
     public ResponseEntity<Welcome> getWelcome(@RequestParam String name) {
         Welcome welcomePerson = new Welcome(name);
