@@ -1,9 +1,18 @@
-# A Cloud Native Oauth2 Authentication and Authorisation Infrastructure 
+# A Cloud Native Oauth2 Authorisation Grant  and Access Delegation model
 
 
 ## EPIC and Benefit hypothesis
 
-As an organisation I distribute my ressource and API to my partner so that only them can access to the ressource I am distributing
+As an organisation or individual  I want to delegate access to my own resssource ressource to a partner agency or service provider so that they can perform operation on my behalf.
+
+Acceptance criteria:
+
+I direct my partners to an authorization giving a temporary grant to my customers own data that are managed on my server (e.g. REST API, or Micro-services)
+
+Given a trusted partner (has a registered  client_id and client secret) regisered for the ressource before the  authorisation server, the trusted partner can be provided an authorisation code
+A fine grained scope ressource server  data, type and data categories can be attached to 
+given I an authorisation grant or code, I can provide 
+
 
 
 ### Feature1 : Authorization server
