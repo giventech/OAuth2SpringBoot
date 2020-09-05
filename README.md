@@ -53,3 +53,9 @@ curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "cont
 
 
 ![image](https://user-images.githubusercontent.com/17228294/92223475-d9f63680-eee3-11ea-84b0-2f8085208e8e.png)
+
+
+# REFERENCES
+
+* https://howtodoinjava.com/spring-boot2/oauth2-auth-server/
+* https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
