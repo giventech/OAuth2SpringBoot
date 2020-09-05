@@ -28,4 +28,23 @@ Feature2 : Authentication server
 Feature3 : Ressource server
 
 
+## Testing 
+
+1) Get the authorization code provididing the parameter below
+
+- http://localhost:8080/oauth/authorize?client_id=clientapp&response_type=code&scope=read_profile_info	
+You will be presented with the screen below 
+
+
+
+
+
+
+
+
+
+
+curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "content-type: application/x-www-form-urlencoded" -d "code=A6A8Tz&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&scope=read_profile_info"
+
+
 ![image](https://user-images.githubusercontent.com/17228294/92223475-d9f63680-eee3-11ea-84b0-2f8085208e8e.png)
