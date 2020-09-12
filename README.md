@@ -9,18 +9,16 @@
 *Acceptance criteria:*
 
  1. I can direct my partners to centralised authorisation service
- 2.  I can protect my  (REST-API)  specific owners data ressources
+ 2. I can protect my  (REST-API)  specific owners data ressources
 
 > As an athorisation system, I want to provide and autorisation code to
 > registered  partner who identifies  (We are not refering to authenication there as it isi this will be covered in the Open Id Connect)
 
 Acceptance criteria:
 
- 1. Given a trusted partner provide a **client_id** and **client
-    secret** matching the authorisation system database,  I can provide
+ 1. Given a trusted partner provide a **client_id** and **clientsecret** matching the authorisation system database,  I can provide
     authorisation code etc...
- 2. I can attach a scope listing  ressource data, type and data
-    categories owners/customer agreed (explicity or implicitly to share)
+ 2. I can attach a scope listing  ressource data, type and data categories owners/customer agreed (explicity or implicitly to share)
 
 OAuth 2 and OpenID Connect Specification
 -  
@@ -28,11 +26,11 @@ The key references for this work are the the ieltf specification. The reading of
 
 ##   Authorisation/Delegation flows VS application types
 
- - Authorisation code :  for apps running on a  [web    server] https://aaronparecki.com/oauth-2-simplified/#web-server-apps),
+ - Authorisation code :  for apps running on a  [web server] https://aaronparecki.com/oauth-2-simplified/#web-server-apps),
    [browser-based]
- - Password: or logging in with a  [username and    password] https://aaronparecki.com/oauth-2-simplified/#other-app-types)
+ - Password: or logging in with a  [username and password] https://aaronparecki.com/oauth-2-simplified/#other-app-types)
    (only for first-partyapps)
- - client credential : for  [application    access](https://aaronparecki.com/oauth-2-simplified/#client-credentials)    without a user present
+ - client credential : for  [application access](https://aaronparecki.com/oauth-2-simplified/#client-credentials)    without a user present
  - implicit ( deprecated) :  was previously recommended for clients
    without a secret, but has been superseded by using the Authorization
    Code grant with PKCE.
@@ -87,10 +85,11 @@ A client application (e.g. Micro-service)  instead of sending their client clien
 
 ## TODO
 
- - [x] Authorisation server
- - [ ] Ressource server
- - [ ] Owner is a web-application: ( "password") grant type
- - [ ] Owner is 
+ - [ ] Rewrite the Feature or epic statement
+ - [ ] Proof reading
+ - [ ] Organise link and ressources
+ - [ ] Explain  spring boot facilitate the  imlementation of the solution 
+ 
 
 # REFERENCES
 
