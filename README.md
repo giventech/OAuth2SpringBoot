@@ -1,22 +1,46 @@
-# A Cloud Native Oauth2 Authorisation Grant  and Access Delegation model
 
 
-## EPIC and Benefit hypothesis
+##  Epic 1: Authorisation server
 
-### As an organisation or individual  I want to delegate access to my own resssource ressource to a partner agency or service provider so that they can perform operation on my behalf.
+> *As an entity (individual or organisation),  I want to delegate access to my own  ressources to a partner agency or service provider whom I
+> trust, so that they can perform operation on my behalf.*
 
-**Acceptance criteria:
+*Acceptance criteria:*
 
-- I can direct my partners to centralised authorisation service capable of granting access to ressource server (REST-API) managing access to specific owners data ressources
+ 1. I can direct my partners to centralised authorisation service
+ 2.  I can protect my  (REST-API)  specific owners data ressources
 
+> As an athorisation system, I want to provide and autorisation code to
+> registered  partner who identifies  (We are not refering to authenication there as it isi this will be covered in the Open Id Connect)
 
-### As an athorisation system, I want to provide autorisation code to identified partner (Identity is not part of OAUTH2 But Open Id connect extention)
+Acceptance criteria:
 
-**Acceptance criteria
+ 1. Given a trusted partner provide a **client_id** and **client
+    secret** matching the authorisation system database,  I can provide
+    authorisation code etc...
+ 2. I can attach a scope listing  ressource data, type and data
+    categories owners/customer agreed (explicity or implicitly to share)
 
-- Given a trusted partner provide a client_id and client secret matching the authorisation system databased I can provide authorisation code etc...
-- I can attach a scope listing  ressource data, type and data categories owners/customer agreed (explicity or implicitly to share)
+OAuth 2 and OpenID Connect Specification
+-  
+The key references for this work are the the ieltf specification. The reading of it can be overwhelming. Plase the article from [Okta provides a high level view of the spec](https://www.oauth.com/oauth2-servers/map-oauth-2-0-specs/) so can map the section 
 
+##   Authorisation/Delegation flows VS application types
+
+ - Authorisation code :  for apps running on a  [web    server] https://aaronparecki.com/oauth-2-simplified/#web-server-apps),
+   [browser-based]
+ - Password: or logging in with a  [username and    password] https://aaronparecki.com/oauth-2-simplified/#other-app-types)
+   (only for first-partyapps)
+ - client credential : for  [application    access](https://aaronparecki.com/oauth-2-simplified/#client-credentials)    without a user present
+ - implicit ( deprecated) :  was previously recommended for clients
+   without a secret, but has been superseded by using the Authorization
+   Code grant with PKCE.
+
+Feature backlogs
+ - [ ] Authorisation server
+ - [ ] Ressource server
+ - [ ] Owner is a web-application: ( "password") grant type
+ - [ ] Owner is 
 
 ### Feature 1 : Authorization server
 - Key principle:
@@ -55,7 +79,7 @@ Todo
 
 # Obtain a access token from a ressource server
 
-curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "content-type: application/x-www-form-urlencoded" -d "code=A6A8Tz&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&scope=read_profile_info"
+    curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "content-type: application/x-www-form-urlencoded" -d "code=A6A8Tz&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&scope=read_profile_info"
 
 ![image](https://user-images.githubusercontent.com/17228294/92304085-43e30e80-efbe-11ea-8eb4-bd4d467aaca2.png)
 
@@ -69,8 +93,8 @@ curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "cont
 
 # REFERENCES
 
-* https://howtodoinjava.com/spring-boot2/oauth2-auth-server/
-* https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
-* https://pattern-match.com/blog/springboot2-with-oauth2-integration/
-* https://www.youtube.com/watch?v=996OiexHze0
-
+ - https://tools.ietf.org/id/draft-ietf-oauth-v2-31.html    *
+ -    https://howtodoinjava.com/spring-boot2/oauth2-auth-server/    *
+ -    https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
+ -   https://pattern-match.com/blog/springboot2-with-oauth2-integration/  
+ - https://www.youtube.com/watch?v=996OiexHze0
