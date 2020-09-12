@@ -24,6 +24,14 @@ OAuth 2 and OpenID Connect Specification
 -  
 The key references for this work are the the ieltf specification. The reading of it can be overwhelming. Plase the article from [Okta provides a high level view of the spec](https://www.oauth.com/oauth2-servers/map-oauth-2-0-specs/) so can map the section 
 
+## OAuth 2 and OpenID Connect Specification
+
+- Owner: The ressource Owner
+- Client: The System wich will be issuing the authorisation requests
+- Authorisation Server: The System wich will grant or reject authorisation requests and later provide token so that an authorized cliend can access the ressources
+- Resource Server: The server (e.g. rest-api) that holds the ressources
+
+
 ##   Authorisation/Delegation flows VS application types
 
  - Authorisation code :  for apps running on a  [web server] https://aaronparecki.com/oauth-2-simplified/#web-server-apps),
@@ -86,6 +94,7 @@ A client application (e.g. Micro-service)  instead of sending their client clien
 ## TODO
 
  - [ ] Rewrite the Feature or epic statement
+ - [ ] Plan features in several branches or repositories
  - [ ] Proof reading
  - [ ] Organise link and ressources
  - [ ] Explain  spring boot facilitate the  imlementation of the solution 
