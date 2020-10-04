@@ -169,7 +169,7 @@ which nas read only
 2. Creating an access token with read will results in a success full ressource + access token call
 as the token was created with 'read' and authorisation is for read mode
 
-![image](docs/scope-sucess.jpg)
+![image](docs/scope-success.jpg)
 
 ## TODO
 
