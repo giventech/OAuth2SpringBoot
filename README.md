@@ -102,8 +102,16 @@ A client application (e.g. Micro-service)  instead of sending their client clien
 
 # REFERENCES
 
+### Specification for OAuth
  - https://tools.ietf.org/id/draft-ietf-oauth-v2-31.html    *
- -    https://howtodoinjava.com/spring-boot2/oauth2-auth-server/    *
- -    https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
- -   https://pattern-match.com/blog/springboot2-with-oauth2-integration/  
+ - https://howtodoinjava.com/spring-boot2/oauth2-auth-server/    *
+ 
+ ### Authorization, Delegation and Scope handling examples
+ 
+ - https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
+ - https://pattern-match.com/blog/springboot2-with-oauth2-integration/  
+ 
+ 
+ ### Using scopes with spring boot
+ - http://www.zakariaamine.com/2018-03-01/using-oauth2-in-spring-scopes
  - https://www.youtube.com/watch?v=996OiexHze0
