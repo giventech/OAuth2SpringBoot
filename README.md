@@ -11,7 +11,7 @@
  1. I can direct my partners to centralised authorisation service
  2. I can protect my  (REST-API)  specific owners data ressources
 
-> As an athorisation system, I want to provide and autorisation code to
+> As an authorization system, I want to provide and autorisation code to
 > registered  partner who identifies  (We are not refering to authenication there as it isi this will be covered in the Open Id Connect)
 
 Acceptance criteria:
@@ -139,6 +139,7 @@ public class CorsConfig {
 /**
 rest of the code omitted 
 **/
+}
 ```
 
 ```java
@@ -159,9 +160,17 @@ public class HelloWorldController {
 
 ```
 
+1. Creating an access token with write scope access token will result in access error for an endpoint
+which nas read only
+
+![image](docs/scope-failure.jpg)
 
 
-![image](docs/scope.jpg)
+2. Creating an access token with read will results in a success full ressource + access token call
+as the token was created with 'read' and authorisation is for read mode
+
+![image](docs/scope-sucess.jpg)
+
 ## TODO
 
  - [ ] Rewrite the Feature or epic statement
