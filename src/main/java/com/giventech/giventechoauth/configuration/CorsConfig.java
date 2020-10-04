@@ -3,12 +3,14 @@ package com.giventech.giventechoauth.configuration;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.Ordered;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
+@Import({SecurityConfig.class, MethodSecurityConfig.class})
 public class CorsConfig {
 
     private String originPermitida = "http://localhost:4200"; // TODO: Configurar para diferentes ambientes

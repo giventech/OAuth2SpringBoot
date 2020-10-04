@@ -83,14 +83,85 @@ A client application (e.g. Micro-service)  instead of sending their client clien
 
 
 
-## Feature 2:  Ressource server
+## Feature 2:  Resource server
 
- Obtain a access token from a ressource server
+
+### TESTING RESSOURCE SERVER
+
+#### Access token with Autorization flow
+ Obtain a access token from a resource server
 
     curl -X POST --user clientapp:123456 http://localhost:8080/oauth/token  -H "content-type: application/x-www-form-urlencoded" -d "code=A6A8Tz&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&scope=read_profile_info"
 
 ![image](https://user-images.githubusercontent.com/17228294/92304085-43e30e80-efbe-11ea-8eb4-bd4d467aaca2.png)
 
+#### Access token with Password flow 
+ Obtain an access token using password flow
+ 
+```
+ curl -X POST --user my-client:my-secret localhost:8080/oauth/token -d 'grant_type=password&client_id=my-client&scope=read&username=test@test.com&password=tester' -H "Accept: application/json"
+```
+
+```
+http -a my-client:my-secret --form POST http://localhost:8080/oauth/token username='test@test.com' password='tester' grant_type='password' --ignore-stdin
+```
+
+#### Access token with scope
+
+Scopes can be created at the same time that a token is created. It requires the below changes in spring to enable annotation based scope checking.
+
+
+1. Specifying a expression handler to handle security at method level expression  
+
+
+```java
+@Configuration
+@EnableGlobalMethodSecurity(
+        prePostEnabled = true,
+        securedEnabled = true,
+        jsr250Enabled = true)
+public class MethodSecurityConfig
+        extends GlobalMethodSecurityConfiguration {
+    @Override
+    protected MethodSecurityExpressionHandler createExpressionHandler() {
+        return new OAuth2MethodSecurityExpressionHandler();
+    }
+}
+
+```
+2. Loading this configuration so that it is applied to the whole application
+Here I imported the configuraration jointly with CorsConfiguration
+```java
+
+@Configuration
+@Import({SecurityConfig.class, MethodSecurityConfig.class})
+public class CorsConfig {
+/**
+rest of the code omitted 
+**/
+```
+
+```java
+
+@Controller
+public class HelloWorldController {
+
+
+    @PreAuthorize("#oauth2.hasScope('read')")
+    @GetMapping("/api/hello")
+    @ResponseBody
+    public ResponseEntity<Welcome> getWelcome(@RequestParam String name) {
+        Welcome welcomePerson = new Welcome(name);
+        ResponseEntity<Welcome> responseEntity = ResponseEntity.ok(welcomePerson);
+        return responseEntity;
+    }
+}
+
+```
+
+
+
+![image](docs/scope.jpg)
 ## TODO
 
  - [ ] Rewrite the Feature or epic statement
@@ -112,6 +183,8 @@ A client application (e.g. Micro-service)  instead of sending their client clien
  - https://pattern-match.com/blog/springboot2-with-oauth2-integration/  
  
  
- ### Using scopes with spring boot
+ ### Using scopes wjith spring boot
  - http://www.zakariaamine.com/2018-03-01/using-oauth2-in-spring-scopes
  - https://www.youtube.com/watch?v=996OiexHze0
+
+

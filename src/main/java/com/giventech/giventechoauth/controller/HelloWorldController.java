@@ -13,6 +13,8 @@ import java.security.Principal;
 
 @Controller
 public class HelloWorldController {
+
+
     @PreAuthorize("#oauth2.hasScope('read')")
     @GetMapping("/api/hello")
     @ResponseBody
